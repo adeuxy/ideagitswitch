@@ -1,11 +1,14 @@
 <idea-plugin>
     <id>com.adeuxy.gituserswitch</id>
     <name>Git User Switch</name>
-    <version>1.0.0</version>
+
+    <version>1.1.0</version>
     <change-notes><![CDATA[
         <b>What's New in 1.1.0:</b><br>
-        - 新增支持 Git 用户切换<br>
+        - 修复取消直接提交<br>
+        - 新增在基于项目固定 Git 用户(存储于.idea目录)<br>
     ]]></change-notes>
+
     <vendor email="a@adeuxy.com">adeuxy</vendor>
     <description>Each time the code is submitted, a prompt pops up asking the user to select git user and automatically switches. source: https://github.com/adeuxy/ideagitswitch contact: a@adeuxy.com</description>
 
