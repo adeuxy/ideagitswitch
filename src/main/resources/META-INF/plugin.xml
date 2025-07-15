@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.adeuxy.gituserswitch</id>
+    <name>Git User Switch</name>
+    <version>1.0.0</version>
+    <vendor email="a@adeuxy.com">adeuxy</vendor>
+    <description>每次提交代码时弹出用户选择 git 用户，并自动切换。
+        \n Each time the code is submitted, a prompt pops up asking the user to select git user and automatically switches.
+        \n 用户列表可通过 `~/.git_user_profiles`(C:\Users\你的用户名\.git_user_profiles) 配置
+        \n The user list can be configured via '~/.git user profiles'(C:\Users\YourName\.git_user_profiles)
+        ```yaml
+        users:
+        - name: Alice
+        email: alice@example.com
+        - name: Bob
+        email: bob@example.com
+        ```
+        \n contact: a@adeuxy.com</description>
+
+    <depends>Git4Idea</depends>
+    <depends>com.intellij.modules.vcs</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <checkinHandlerFactory implementation="com.adeuxy.gituserswitch.GitUserCheckinHandlerFactory"/>
+    </extensions>
+
+    <idea-version since-build="221" until-build="233.*"/>
+</idea-plugin> 
