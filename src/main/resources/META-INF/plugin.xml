@@ -21,5 +21,6 @@
         <checkinHandlerFactory implementation="com.adeuxy.gituserswitch.GitUserCheckinHandlerFactory"/>
     </extensions>
 
-    <idea-version since-build="221" until-build="233.*"/>
+    <idea-version since-build="203"/>
+
 </idea-plugin> 
