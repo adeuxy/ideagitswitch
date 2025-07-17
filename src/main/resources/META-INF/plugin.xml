@@ -5,8 +5,10 @@
     <version>1.1.0</version>
     <change-notes><![CDATA[
         <b>What's New in 1.1.0:</b><br>
-        - 修复取消直接提交<br>
+        - 修复点击取消后直接提交了<br>
         - 新增在基于项目固定 Git 用户(存储于.idea目录)<br>
+        - Fixed an issue where clicking "Cancel" still proceeded with commit<br>
+        - Added support for pinning Git user per project (stored in the .idea directory)<br>
     ]]></change-notes>
 
     <vendor email="a@adeuxy.com">adeuxy</vendor>
