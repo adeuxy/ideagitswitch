@@ -13,6 +13,7 @@ public class GitUserSelectDialog extends DialogWrapper {
     private final JList<String> userList;
     private final JCheckBox fixedCheckBox;
     private JPanel mainPanel;
+    private boolean fixedMode = false;
 
     public GitUserSelectDialog(Project project, List<GitUserConfigLoader.UserProfile> users, int defaultIndex, boolean fixedDefault) {
         super(project);
@@ -21,7 +22,7 @@ public class GitUserSelectDialog extends DialogWrapper {
         userList = new JList<>(users.stream().map(Object::toString).toArray(String[]::new));
         userList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         userList.setSelectedIndex(defaultIndex);
-        fixedCheckBox = new JCheckBox("固定", fixedDefault);
+        fixedCheckBox = new JCheckBox("pin", fixedDefault);
         init();
     }
 
@@ -40,5 +41,15 @@ public class GitUserSelectDialog extends DialogWrapper {
 
     public boolean isFixedSelected() {
         return fixedCheckBox.isSelected();
+    }
+
+    public void setFixedMode(boolean fixedMode) {
+        this.fixedMode = fixedMode;
+        if (userList != null) {
+            userList.setEnabled(!fixedMode);
+        }
+        if (fixedCheckBox != null) {
+            fixedCheckBox.setEnabled(!fixedMode);
+        }
     }
 } 
